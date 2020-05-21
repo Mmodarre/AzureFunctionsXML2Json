@@ -1,5 +1,9 @@
 # Azure XML2JSON
-Azure function to convert XML file to JSON.
+Azure function to convert XML file to JSON. This function can be used in conjunction with Azure Data Factory to process XML files. 
+
+https://feedback.azure.com/forums/270578-data-factory/suggestions/17508058-xml-file-type-in-copy-activity-along-with-xml-sc
+
+https://docs.microsoft.com/en-us/azure/data-factory/supported-file-formats-and-compression-codecs
 
 - Current implementation expects both files to be stored on Azure Blob Storage
 - Source and converted (destination) files could be on different storage accounts/containers
@@ -21,11 +25,17 @@ Azure function to convert XML file to JSON.
     (OPTIONAL)"destination_connection_str_secret_name": "<destination storage account connection string secret>"
 
 }
-````
+```
 
-####NOTES:
+### NOTES:
 - If `destination container` and `destination_connection_str_secret_name` attributes are not provided in the request body the function saves the result in the same storage account and container.
 
 - The function only accepts files with .xml suffix.
 
 - The resulting file with be the same name as xml file with .json suffix.
+
+### To do
+
+- [ ] Add Azure Data Factory usage instructions
+
+
