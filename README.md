@@ -9,6 +9,8 @@ Azure function to convert XML file to JSON. This function can be used in conjunc
 - Source and converted (destination) files could be on different storage accounts/containers
 - Storage credentials needs to be stored on Azure Key Vault
 
+
+
 ## Usage:
 1. Clone repo to you development environment.
 2. Use VS code to deploy function to Azure Functions (Python 3.7 consumption or premium plan).
@@ -33,8 +35,10 @@ Azure function to convert XML file to JSON. This function can be used in conjunc
 - The function only accepts files with .xml suffix.
 
 - The resulting file with be the same name as xml file with .json suffix.
+- With functions consumption plan there is a limit of 240 seconds execution. This could mean for files bigger than 10MB the functions times out. In this case you will need a function in premium plan.
 
-### To do
+
+## To do
 
 - [ ] Add Azure Data Factory usage instructions
 
